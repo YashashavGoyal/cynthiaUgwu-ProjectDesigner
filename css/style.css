@@ -21,6 +21,16 @@ html, body{
     transition: all cubic-bezier(0.01, 0, 0, 0.79) 1s;
 }
 
+.bounding{
+    width: fit-content;
+    overflow: hidden;
+    /* background: red; */
+}
+
+.bounding .boundingElem{
+    transform: translateY(100%);
+}
+
 #main{
     width: 100%;
     background: black;
@@ -64,6 +74,9 @@ nav a{
 #heading .blockText{
     width: fit-content;
     /* background: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .blockText h1{
@@ -79,6 +92,9 @@ nav a{
 #sideHeading{
     margin-top: 20px;
     padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 #sideHeading h5{
