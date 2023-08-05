@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
 }
 
 html, body{
@@ -21,7 +23,6 @@ html, body{
 
 nav{
     width: 100%;
-    box-sizing: border-box;
     padding: 20px 40px;
     display: flex;
     align-items: center;
@@ -76,7 +77,6 @@ nav a{
 
 #heroFooter{
     padding: 0 2vw;
-    box-sizing: border-box;
     position: absolute;
     bottom: 2%;
     width: 100%;
@@ -105,4 +105,45 @@ nav a{
     height: 25px;
     background: #888;
     border-radius: 50%;
+}
+
+
+
+#second{
+    padding-top: 100px;
+    padding-right: 10vw;
+    padding-left: 4vw;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: #fff;
+}
+
+#second .elem{
+    width: 100%;
+    padding: 2vw 3vw;
+    padding-right: 0;
+    border-top: 1px solid #888;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#second .elem h1{
+    text-transform: uppercase;
+    font-size: 7vw;
+    opacity: 0.7;
+}
+
+#second .elemLast{
+    border-bottom: 1px solid #888;
+}
+
+#second .elem img{
+    /* opacity: 0; */
+    display: none;
+    height: 140%;
+    position: absolute;
+    z-index: 999;
 }
