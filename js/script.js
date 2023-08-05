@@ -29,13 +29,43 @@ function firstPageAnime() {
     })
 }
 
-function circleMouseFollower() {
-    window.addEventListener("mousemove", function(details) {
-        // console.log(details);  
-        // console.log(details.clientX, details.clientY);  
-        this.document.querySelector(`#mouseCircle`).style.transform = `translate(${details.clientX}px, ${details.clientY}px)`;
+let timeout;
+
+function circleShapeChanger() {
+    // define default scale values
+    let xScale = 1;
+    let yScale = 1;
+    
+    // define default prev values
+    let xPrev = 0;
+    let yPrev = 0;
+    window.addEventListener(`mousemove`, function(details){
+        this.clearTimeout(timeout);
+        let xDiff = details.clientX - xPrev;
+        let yDiff = details.clientY - yPrev;
+
+        xScale = gsap.utils.clamp(0.8, 1.2, xDiff);
+        yScale = gsap.utils.clamp(0.8, 1.2, yDiff);
+        
+        xPrev = details.clientX;
+        yPrev = details.clientY;
+
+        // console.log(xDiff, yDiff);
+        circleMouseFollower(xScale, yScale);
+        timeout = setTimeout(() => {
+            this.document.querySelector(`#mouseCircle`).style.transform = `translate(${details.clientX}px, ${details.clientY}px) scale(1, 1)`;
+        }, 100);
     })
 }
 
+function circleMouseFollower(xScale, yScale) {
+    window.addEventListener("mousemove", function(details) {
+        // console.log(details);  
+        // console.log(details.clientX, details.clientY);  
+        this.document.querySelector(`#mouseCircle`).style.transform = `translate(${details.clientX}px, ${details.clientY}px) scale(${xScale}, ${yScale})`;
+    })
+}
+
+circleShapeChanger();
 circleMouseFollower();
 firstPageAnime();
