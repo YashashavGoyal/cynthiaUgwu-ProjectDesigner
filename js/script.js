@@ -77,23 +77,23 @@ circleMouseFollower();
 firstPageAnime();
 
 // Photo Mover
-document.querySelectorAll(`.elem`).forEach(function (elem) {
+document.querySelectorAll(`.elem`).forEach(function (element) {
     var rotate = 0;
     var diffrot = 0;
   
-    elem.addEventListener(`mouseleave`, function (dets) {
-      gsap.to(elem.querySelector(`img`), {
+    element.addEventListener(`mouseleave`, function (dets) {
+      gsap.to(element.querySelector(`img`), {
         opacity: 0,
         ease: Power3,
         duration: 0.5,
       });
     });
   
-    elem.addEventListener(`mousemove`, function (dets) {
-      var diff = dets.clientY - elem.getBoundingClientRect().top;
+    element.addEventListener(`mousemove`, function (dets) {
+      var diff = dets.clientY - element.getBoundingClientRect().top;
       diffrot = dets.clientX - rotate;
       rotate = dets.clientX;
-      gsap.to(elem.querySelector(`img`), {
+      gsap.to(element.querySelector(`img`), {
         opacity: 1,
         ease: Power3,
         top: diff,
