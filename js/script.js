@@ -1,9 +1,12 @@
+// Enabiling Smooth Scrolling
 const scroll = new LocomotiveScroll({
     el: document.querySelector('#main'),
     smooth: true
 });
 // el means element top level element i.e. main in our website
 
+
+// Adding Animation on Landing Page
 function firstPageAnime() {
     let tl = gsap.timeline();
 
@@ -29,8 +32,10 @@ function firstPageAnime() {
     })
 }
 
-let timeout;
 
+// Enchancing The movement of Cursor
+
+let timeout;
 function circleShapeChanger() {
     // define default scale values
     let xScale = 1;
@@ -58,6 +63,7 @@ function circleShapeChanger() {
     })
 }
 
+// Enabiling Cursor
 function circleMouseFollower(xScale, yScale) {
     window.addEventListener("mousemove", function(details) {
         // console.log(details);  
@@ -70,6 +76,7 @@ circleShapeChanger();
 circleMouseFollower();
 firstPageAnime();
 
+// Photo Mover
 document.querySelectorAll(`.elem`).forEach(function (elem) {
     var rotate = 0;
     var diffrot = 0;
